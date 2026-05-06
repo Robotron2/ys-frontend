@@ -1,29 +1,22 @@
+"use client";
 import React from "react";
-
-export const SunIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-    <circle cx="12" cy="12" r="5"/>
-    <line x1="12" y1="1" x2="12" y2="3"/>
-    <line x1="12" y1="21" x2="12" y2="23"/>
-    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-    <line x1="1" y1="12" x2="3" y2="12"/>
-    <line x1="21" y1="12" x2="23" y2="12"/>
-    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-  </svg>
-);
-
-export const MoonIcon = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-  </svg>
-);
-
+import { Shield, Sun, Moon, ArrowUpRight, TrendingUp, Wallet, ArrowDownCircle, BarChart3, HelpCircle, LayoutDashboard } from "lucide-react";
+// logo component
 export const Logo = () => (
-  <svg width="24" height="24" viewBox="0 0 40 40" fill="none">
-    <rect width="40" height="40" rx="10" fill="#00DEC8" />
-    <path d="M20 10L30 25H10L20 10Z" fill="white" />
-    <path d="M20 18L26 27H14L20 18Z" fill="#0C1018" />
-  </svg>
+  <div className="relative flex items-center justify-center group">
+    <div className="absolute inset-0 bg-teal/20 blur-xl group-hover:bg-teal/40 transition-all rounded-full" />
+    <div className="relative w-10 h-10 bg-gradient-to-br from-teal to-blue-500 rounded-xl flex items-center justify-center shadow-lg transform group-hover:rotate-6 transition-transform">
+      <Shield className="w-6 h-6 text-black stroke-[2.5]" />
+    </div>
+  </div>
 );
+
+export const SunIcon = () => <Sun className="w-5 h-5" />;
+export const MoonIcon = () => <Moon className="w-5 h-5" />;
+export const EarnIcon = () => <TrendingUp className="w-5 h-5" />;
+export const WithdrawIcon = () => <ArrowDownCircle className="w-5 h-5" />;
+export const DepositIcon = () => <Wallet className="w-5 h-5" />;
+export const StatsIcon = () => <BarChart3 className="w-5 h-5" />;
+export const ExternalLinkIcon = () => <ArrowUpRight className="w-4 h-4" />;
+export const QuestionIcon = () => <HelpCircle className="w-5 h-5" />;
+export const DashboardIcon = () => <LayoutDashboard className="w-5 h-5" />;

@@ -20,28 +20,24 @@ export const StatsGrid = ({
       : "0.00";
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div className="space-y-4">
       {[
         {
           val: isLoadingVaultBalance ? "…" : `$${fmt(vaultBalance)}`,
           label: "Total Vault TVL",
-          cls: "",
+          cls: "text-primary",
         },
-        { val: "4.8%", label: "Current APR", cls: "text-teal" },
-        { val: "4,207", label: "Active Users", cls: "" },
-        { val: "No Lockup", label: "Withdrawals", cls: "text-gold" },
+        { val: "4.8%", label: "Current Variable APR", cls: "text-teal" },
       ].map((stat, i) => (
         <div
           key={i}
-          className="bg-[var(--bg-surface)] border border-[var(--border)] rounded-xl p-4 shadow-sm"
+          className="flex justify-between items-center p-5 bg-white/[0.01] border border-white/[0.03] rounded-2xl hover:bg-white/[0.03] transition-all"
         >
-          <div
-            className={`font-display text-lg md:text-xl font-extrabold mb-1 ${stat.cls}`}
-          >
-            {stat.val}
-          </div>
-          <div className="text-[var(--text-micro)] uppercase tracking-wider font-semibold">
+          <div className="text-[10px] uppercase tracking-[0.2em] font-black text-muted">
             {stat.label}
+          </div>
+          <div className={`text-xl font-black font-display uppercase tracking-tight ${stat.cls}`}>
+            {stat.val}
           </div>
         </div>
       ))}
