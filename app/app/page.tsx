@@ -94,8 +94,9 @@ export default function AppPage() {
           address={address}
           open={open}
         />
-        <div className="pt-32 flex items-center justify-center p-6 min-h-screen">
-          <div className="premium-card text-center max-w-md w-full shadow-lg">
+        <div className="pt-32 flex items-center justify-center p-6 min-h-screen relative overflow-hidden">
+          <div className="fintech-grid" />
+          <div className="premium-card text-center max-w-md w-full shadow-lg relative z-10">
             <h1 className="text-2xl font-bold mb-3">Ready to Earn?</h1>
             <p className="text-muted-foreground mb-8">
               Connect your wallet to access your non-custodial yield dashboard.
@@ -116,9 +117,10 @@ export default function AppPage() {
     <div className="flex h-screen bg-background overflow-hidden">
       <Sidebar tab={tab} setTab={setTab} />
 
-      <main className="flex-1 overflow-y-auto p-8 lg:p-12">
+      <main className="flex-1 overflow-y-auto p-8 lg:p-12 relative">
+        <div className="fintech-grid" />
         {tab === "deposit" ? (
-          <div className="max-w-6xl mx-auto space-y-8">
+          <div className="max-w-6xl mx-auto space-y-8 relative z-10">
             {/* Top Stats Section */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Main Balance Card */}
