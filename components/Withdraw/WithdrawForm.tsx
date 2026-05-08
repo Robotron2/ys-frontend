@@ -34,7 +34,7 @@ export const WithdrawForm = ({
     try {
       const shares = parseUnits(withdrawAmt, USDC_DECIMALS);
       previewByShares(shares).then(setWithdrawPreview);
-    } catch (e) {
+    } catch {
       // Handle invalid input gracefully
     }
   }, [withdrawAmt, isConnected, previewByShares, withdrawPreview]);
@@ -61,7 +61,7 @@ export const WithdrawForm = ({
   const getYieldInfo = () => {
     if (!withdrawPreview || !withdrawAmt || !userShares || !userDeposits) return { yield: 0, fee: 0 };
     
-    const sharesToWithdraw = parseUnits(withdrawAmt, USDC_DECIMALS);
+
     const grossAssets = parseFloat(formatUnits(withdrawPreview, USDC_DECIMALS));
     
     // Proportional principal calculation

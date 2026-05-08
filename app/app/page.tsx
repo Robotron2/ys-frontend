@@ -35,11 +35,11 @@ export default function AppPage() {
   const { address, isConnected } = useAppKitAccount();
   const { open } = useAppKit();
 
-  const { refetchUsdcBalance, isLoadingUsdcBalance } = useUsdcBalance();
-  const { refetchUserShares, isLoadingUserShares } = useUserShares();
-  const { refetchUserBalance, isLoadingUserBalance } = useUserBalance();
+  const { refetchUsdcBalance } = useUsdcBalance();
+  const { refetchUserShares } = useUserShares();
+  const { refetchUserBalance } = useUserBalance();
   const { refetchUserDeposits } = useUserDeposits();
-  const { refetchVaultBalance, isLoadingVaultBalance } = useVaultBalance();
+  const { refetchVaultBalance } = useVaultBalance();
   const { previewByAssets } = usePreviewDeposit();
 
   const refreshData = useCallback(async () => {
@@ -75,6 +75,7 @@ export default function AppPage() {
   }, [refreshData]);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     refreshData();
   }, [refreshData]);
 

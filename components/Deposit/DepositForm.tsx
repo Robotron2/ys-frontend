@@ -23,7 +23,7 @@ export const DepositForm = ({
 }: DepositFormProps) => {
   const [depositAmt, setDepositAmt] = useState("");
   const [depositPreview, setDepositPreview] = useState<bigint | null>(null);
-  const [currentAllowance, setCurrentAllowance] = useState<bigint | null>(null);
+
 
   const { previewByAssets, isPreviewingDeposit } = usePreviewDeposit();
   const { approve } = useApprove();
@@ -40,11 +40,7 @@ export const DepositForm = ({
     previewByAssets(assets).then(setDepositPreview);
   }, [depositAmt, isConnected, previewByAssets, depositPreview]);
 
-  useEffect(() => {
-    if (isConnected) {
-      refetchAllowance().then(setCurrentAllowance);
-    }
-  }, [isConnected, refetchAllowance]);
+
 
 
   const [flowStatus, setFlowStatus] = useState<"idle" | "approving" | "depositing">("idle");
